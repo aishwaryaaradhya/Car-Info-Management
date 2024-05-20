@@ -265,6 +265,7 @@ namespace Car_Info_Management
 
 ---CreateCar(Admin)
 <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="CreateCar.aspx.cs" Inherits="CarInfoManagement.CreateCar" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="CreateCar.aspx.cs" Inherits="CarInfoManagement.CreateCar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="cphOpenSideNav" runat="server">

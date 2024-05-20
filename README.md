@@ -1,16 +1,20 @@
 # Car-Info-Management
 
---HomePage.Mater
-<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPage.Master.cs" Inherits="CarInfoManagement.MasterPage" %>
+
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageTemp.Master.cs" Inherits="CarInfoManagement.MasterPageTemp" %>
 
 <!DOCTYPE html>
-<html lang="en">
+
+<html>
+
 <head runat="server">
-    <meta charset="utf-8" />
-    <title>
-        <asp:ContentPlaceHolder ID="head" runat="server">
-        </asp:ContentPlaceHolder>
-    </title>
+
+    <title></title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
 
     <style>
         body {
@@ -55,15 +59,25 @@
             margin: 0;
             padding: 0;
         }
+
         /*
+
         .sidenav-overlay {
+
             position: fixed;
+
             top: 0;
+
             left: 0;
+
             width: 0%;
+
             height: 100%;
+
             background-color: rgba(0, 0, 0, 0.5);
+
             z-index: 1010;
+
         }*/
 
         .sidenav {
@@ -112,46 +126,70 @@
             margin-top: 60px;
         }
     </style>
+
 </head>
+
 <body>
+
     <form id="form1" runat="server">
+
         <div>
+
             <nav class="navbar navbar-light bg-light">
+
                 <div>
-                    <span class="openbtn" onclick="openSideNav()">&#9776;</span>
+                    <asp:ContentPlaceHolder ID="cphOpenSideNav" runat="server"></asp:ContentPlaceHolder>
                     <asp:HyperLink CssClass="navbar-brand" runat="server" NavigateUrl="~/AdminDashboard.aspx">Car System</asp:HyperLink>
                 </div>
-                <div class="sidenav-items">
-                    <ul class="nav-items">
-                        <li class="nav-item">
-                            <a class="nav-link">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Account</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link">Log-out</a>
-                        </li>
-                    </ul>
-                </div>
+                <ul class="nav-items">
+                    <li class="nav-item">
+                        <a class="nav-link" href="HomePage.aspx">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="AdminLogin.aspx">Admin Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Customer.aspx">Customer</a>
+                    </li>
+                </ul>
             </nav>
-            <nav id="sideNav" class="sidenav">
-                <a class="closebtn" style="padding: 5px;" onclick="closeSideNav();">&times;</a>
-                <asp:ContentPlaceHolder ID="cphSideNavItems" runat="server"></asp:ContentPlaceHolder>
-            </nav>
-            <hr />
-            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
-            <hr />
-            <footer>
-                <p class="text-center">&copy; <%: DateTime.Now.Year %> - Car Information Management System</p>
-            </footer>
+            <asp:ContentPlaceHolder ID="cphSideNav" runat="server"></asp:ContentPlaceHolder>
+
+            <asp:ContentPlaceHolder ID="cphBody" runat="server">
+            </asp:ContentPlaceHolder>
+
         </div>
+
     </form>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+    <script>
+
+        function openSideNav() {
+
+            var sideNav = document.getElementById("sideNav");
+
+            sideNav.style.width = "250px";
+
+            var sideNavOverlay = document.querySelectorAll("sidenav-overlay")[0];
+
+            sideNavOverlay.style.width = "100%";
+
+        }
+
+        function closeSideNav() {
+
+            var sideNav = document.getElementById("sideNav");
+
+            sideNav.style.width = "0";
+
+            var sideNavOverlay = document.querySelectorAll("sidenav-overlay")[0];
+
+            sideNavOverlay.style.width = "0px";
+
+        }
+
+    </script>
+
 </body>
+
 </html>
-
-
-
-
-

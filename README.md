@@ -1,7 +1,5 @@
 # Car-Info-Management
 
- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageTemp.Master.cs" Inherits="CarInfoManagement.MasterPageTemp" %>
 
 <!DOCTYPE html>
@@ -265,5 +263,113 @@ namespace Car_Info_Management
     </ul>
 </asp:Content>
 
+---CreateCar(Admin)
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="CreateCar.aspx.cs" Inherits="CarInfoManagement.CreateCar" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphOpenSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphBody" runat="server">
+    <div class="container">
+    <h2 class="auto-style1">Create Car</h2>
+    <div class="form-group">
+        <table class="auto-style2">
+            <tr>
+                <td>
+                    <label for="ManufactureId">Manufacturer</label></td>
+                <td>
+                    <asp:TextBox ID="ManufactureId" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Model">Model</label></td>
+                <td>
+                    <asp:TextBox ID="Model" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="TypeId">Type</label></td>
+                <td>
+                    <asp:DropDownList ID="TypeId" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Engine">Engine</label></td>
+                <td>
+                    <asp:TextBox ID="Engine" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="BHP">BHP</label></td>
+                <td>
+                    <asp:TextBox ID="BHP" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="TransmissionTypeId">TransmissionType</label></td>
+                <td>
+                    <asp:DropDownList ID="TransmissionTypeId" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Mileage">Mileage</label></td>
+                <td>
+                    <asp:TextBox ID="Mileage" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Seats">Seats</label></td>
+                <td>
+                    <asp:TextBox ID="Seats" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="AirBagDetails">AirBag Details</label>
+                </td>
+                <td>
+                    <asp:TextBox ID="AirBagDetails" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="BootSpace">Boots Space</label></td>
+                <td>
+                    <asp:TextBox ID="BootsSpace" runat="server" CssClass="form-control" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label for="Price">Showroom Price</label></td>
+                <td>
+                    <asp:TextBox ID="Price" runat="server" CssClass="form-control"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    &nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    &nbsp;</td>
+                <td>
+                    <asp:Button ID="CreateButton" runat="server" Text="Create" CssClass="btn btn-primary"/>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</asp:Content>
 
 

@@ -193,3 +193,22 @@
 </body>
 
 </html>
+
+---Car Entity
+namespace Car_Info_Management
+{
+    public class CarInfo
+    {
+        public string manufacturerName { get; set; }
+        public string model { get; set; }
+        public string type { get; set; }
+        public string engine { get; set; }
+        public int bhp { get; set; }
+        public string transmission { get; set; }
+        public int mileage { get; set; }
+        public int seats { get; set; }
+        public string airBagDetails { get; set; }
+        public int bootSpace { get; set; }
+        public decimal price { get; set; }
+    }
+}

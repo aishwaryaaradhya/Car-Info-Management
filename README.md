@@ -4,27 +4,15 @@
 <%@ Master Language="C#" AutoEventWireup="true" CodeBehind="MasterPageTemp.Master.cs" Inherits="CarInfoManagement.MasterPageTemp" %>
 
 <!DOCTYPE html>
-
 <html>
-
 <head runat="server">
-
     <title></title>
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
-
-    <asp:ContentPlaceHolder ID="head" runat="server">
-    </asp:ContentPlaceHolder>
-
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
     <style>
         body {
             padding-top: 69px;
         }
-
-            body::-webkit-scrollbar {
-                display: none;
-            }
-
         .navbar {
             display: flex;
             justify-content: space-between;
@@ -35,23 +23,16 @@
             z-index: 1000;
             box-shadow: 0 0 10px 0 #0000004d;
         }
-
         .navbar-brand {
             font-size: 1.8rem;
             font-family: Roboto, Arial, sans-serif;
             font-weight: bold;
         }
-
         .nav-link {
             font-size: 1.2rem;
             margin-left: 1.5rem;
             cursor: pointer;
         }
-
-            .nav-link:hover {
-                text-decoration: underline;
-            }
-
         .nav-items {
             display: flex;
             align-items: center;
@@ -59,27 +40,6 @@
             margin: 0;
             padding: 0;
         }
-
-        /*
-
-        .sidenav-overlay {
-
-            position: fixed;
-
-            top: 0;
-
-            left: 0;
-
-            width: 0%;
-
-            height: 100%;
-
-            background-color: rgba(0, 0, 0, 0.5);
-
-            z-index: 1010;
-
-        }*/
-
         .sidenav {
             height: 100%;
             width: 0;
@@ -87,32 +47,20 @@
             z-index: 1001;
             top: 0;
             left: 0;
-            overflow-x: hidden;
-            transition: 0.5s;
-            position: fixed;
             background-color: #ffffff;
             overflow-x: hidden;
+            transition: 0.5s;
             padding-top: 20px;
             box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
         }
-
-            .sidenav a {
-                padding: 8px 8px 8px 32px;
-                text-decoration: none;
-                font-size: 18px;
-                color: #333333;
-                display: block;
-                white-space: nowrap;
-            }
-
-        .openbtn {
-            font-size: 30px;
-            cursor: pointer;
+        .sidenav a {
+            padding: 8px 8px 8px 32px;
+            text-decoration: none;
+            font-size: 18px;
             color: #333333;
-            padding: 20px;
-            border: none;
+            display: block;
+            white-space: nowrap;
         }
-
         .sidenav .closebtn {
             position: absolute;
             top: 10px;
@@ -121,22 +69,15 @@
             color: #666;
             cursor: pointer;
         }
-
         .sidenav-items {
             margin-top: 60px;
         }
     </style>
-
 </head>
-
 <body>
-
     <form id="form1" runat="server">
-
         <div>
-
             <nav class="navbar navbar-light bg-light">
-
                 <div>
                     <asp:ContentPlaceHolder ID="cphOpenSideNav" runat="server"></asp:ContentPlaceHolder>
                     <asp:HyperLink CssClass="navbar-brand" runat="server" NavigateUrl="~/AdminDashboard.aspx">Car System</asp:HyperLink>
@@ -153,46 +94,26 @@
                     </li>
                 </ul>
             </nav>
-            <asp:ContentPlaceHolder ID="cphSideNav" runat="server"></asp:ContentPlaceHolder>
-
-            <asp:ContentPlaceHolder ID="cphBody" runat="server">
-            </asp:ContentPlaceHolder>
-
+            <div id="sideNav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeSideNav()">&times;</a>
+                <asp:ContentPlaceHolder ID="cphSideNav" runat="server"></asp:ContentPlaceHolder>
+            </div>
+            <asp:ContentPlaceHolder ID="cphBody" runat="server"></asp:ContentPlaceHolder>
         </div>
-
     </form>
-
+    
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-qptG4BRNaSK1rmDpZ++/xrFwAFGhgfsfZ9sx2PqnE/4yCTpyJffoDjjk+N5t9ggd" crossorigin="anonymous">            </script>
     <script>
-
         function openSideNav() {
-
-            var sideNav = document.getElementById("sideNav");
-
-            sideNav.style.width = "250px";
-
-            var sideNavOverlay = document.querySelectorAll("sidenav-overlay")[0];
-
-            sideNavOverlay.style.width = "100%";
-
+            document.getElementById("sideNav").style.width = "250px";
         }
-
         function closeSideNav() {
-
-            var sideNav = document.getElementById("sideNav");
-
-            sideNav.style.width = "0";
-
-            var sideNavOverlay = document.querySelectorAll("sidenav-overlay")[0];
-
-            sideNavOverlay.style.width = "0px";
-
+            document.getElementById("sideNav").style.width = "0";
         }
-
     </script>
-
 </body>
-
 </html>
+
 
 ---Car Entity
 namespace Car_Info_Management
@@ -228,45 +149,38 @@ namespace Car_Info_Management
 </asp:Content>
 
 --Admin Login
-<%@ Page Title="" Language="C#" MasterPageFile="~/NestedMasterPage1.master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CarInfoManagement.WebForm2" %>
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CarInfoManagement.WebForm2" %>
 
-<asp:Content ID="Content1" ContentPlaceHolderID="cphSideNavItems" runat="server">
-    
+<asp:Content ID="Content1" ContentPlaceHolderID="cphSideNav" runat="server">
     <ul class="navbar-nav">
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" id="navbardarkdropdownmenulink1" role="button" data-bs-toggle="dropdown" 
-                aria-haspopup="true" aria-expanded="false">car info
-            </a>
-               <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink1">
-                <a class="dropdown-item" href="#">add</a>
-                <a class="dropdown-item" href="#">update car info</a>
-                <a class="dropdown-item" href="#">list</a>
-                <a class="dropdown-item" href="#">delete car info</a>
+            <a class="nav-link dropdown-toggle" id="navbardarkdropdownmenulink1" role="button" data-bs-toggle="dropdown" aria-expanded="false">Car Info</a>
+            <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink1">
+                <li><a class="dropdown-item" href="CreateCar.aspx">Add</a></li>
+                <li><a class="dropdown-item" href="UpdateCar.aspx">Update Car Info</a></li>
+                <li><a class="dropdown-item" href="ListCars.aspx">List</a></li>
+                <li><a class="dropdown-item" href="DeleteCar.aspx">Delete Car Info</a></li>
             </ul>
         </li>
-
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">car transmission types
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">Car Transmission Types</a>
             <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink2">
-                <li><a class="dropdown-item" href="#">add</a></li>
-                <li><a class="dropdown-item" href="#">update</a></li>
-                <li><a class="dropdown-item" href="#">list</a></li>
-                <li><a class="dropdown-item" href="#">delete</a></li>
+                <li><a class="dropdown-item" href="#">Add</a></li>
+                <li><a class="dropdown-item" href="#">Update</a></li>
+                <li><a class="dropdown-item" href="#">List</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
             </ul>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">car types
-            </a>
+            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">Car Types</a>
             <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink3">
-                <li><a class="dropdown-item" href="#">add</a></li>
-                <li><a class="dropdown-item" href="#">update</a></li>
-                <li><a class="dropdown-item" href="#">list</a></li>
-                <li><a class="dropdown-item" href="#">delete</a></li>
+                <li><a class="dropdown-item" href="#">Add</a></li>
+                <li><a class="dropdown-item" href="#">Update</a></li>
+                <li><a class="dropdown-item" href="#">List</a></li>
+                <li><a class="dropdown-item" href="#">Delete</a></li>
             </ul>
         </li>
-
     </ul>
-
 </asp:Content>
+
 

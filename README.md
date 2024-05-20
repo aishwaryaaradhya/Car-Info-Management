@@ -195,7 +195,8 @@
 </html>
 
 
----Car Entity
+**---Car Entity**
+
 namespace Car_Info_Management
 {
     public class CarInfo
@@ -228,7 +229,8 @@ namespace Car_Info_Management
     
 </asp:Content>
 
---Admin Login
+**--Admin Login**
+
 <%@ Page Title="" Language="C#" MasterPageFile="~/NestedMasterPage1.master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CarInfoManagement.WebForm2" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="cphSideNavItems" runat="server">    
@@ -263,7 +265,8 @@ namespace Car_Info_Management
     </ul>
 </asp:Content>
 
----CreateCar(Admin)
+**---CreateCar(Admin)**
+
 <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="CreateCar.aspx.cs" Inherits="CarInfoManagement.CreateCar" %>
 <%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="CreateCar.aspx.cs" Inherits="CarInfoManagement.CreateCar" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
@@ -284,6 +287,123 @@ namespace Car_Info_Management
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <h2 class="text-center">Create Car</h2>
+                <div class="form-group">
+                    <table class="table">
+                        <tr>
+                            <td>
+                                <label for="ManufactureId">Manufacturer</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="ManufactureId" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Model">Model</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Model" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="TypeId">Type</label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="TypeId" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Engine">Engine</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Engine" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="BHP">BHP</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="BHP" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="TransmissionTypeId">Transmission Type</label>
+                            </td>
+                            <td>
+                                <asp:DropDownList ID="TransmissionTypeId" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Mileage">Mileage</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Mileage" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Seats">Seats</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Seats" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="AirBagDetails">Airbag Details</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="AirBagDetails" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="BootsSpace">Boot Space</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="BootsSpace" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <label for="Price">Showroom Price</label>
+                            </td>
+                            <td>
+                                <asp:TextBox ID="Price" runat="server" CssClass="form-control" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <asp:Button ID="CreateButton" runat="server" Text="Create" CssClass="btn btn-primary" />
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</asp:Content>
+
+**---Update Car Info Admin**
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="UpdateCarAdmin.aspx.cs" Inherits="CarInfoManagement.UpdateCarAdmin" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphOpenSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphBody" runat="server">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h2 class="text-center">Update Car Info</h2>
                 <div class="form-group">
                     <table class="table">
                         <tr>

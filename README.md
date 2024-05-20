@@ -212,3 +212,61 @@ namespace Car_Info_Management
         public decimal price { get; set; }
     }
 }
+
+----HomePage
+
+<%@ Page Title="" Language="C#" MasterPageFile="~/MasterPageTemp.Master" AutoEventWireup="true" CodeBehind="WebForm1.aspx.cs" Inherits="CarInfoManagement.WebForm1" %>
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="cphOpenSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content3" ContentPlaceHolderID="cphSideNav" runat="server">
+</asp:Content>
+<asp:Content ID="Content4" ContentPlaceHolderID="cphBody" runat="server">
+    <h1 style="text-align:center;margin-top:30px;">Welcome!</h1>
+    
+</asp:Content>
+
+--Admin Login
+<%@ Page Title="" Language="C#" MasterPageFile="~/NestedMasterPage1.master" AutoEventWireup="true" CodeBehind="WebForm2.aspx.cs" Inherits="CarInfoManagement.WebForm2" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="cphSideNavItems" runat="server">
+    
+    <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" id="navbardarkdropdownmenulink1" role="button" data-bs-toggle="dropdown" 
+                aria-haspopup="true" aria-expanded="false">car info
+            </a>
+               <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink1">
+                <a class="dropdown-item" href="#">add</a>
+                <a class="dropdown-item" href="#">update car info</a>
+                <a class="dropdown-item" href="#">list</a>
+                <a class="dropdown-item" href="#">delete car info</a>
+            </ul>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink2" role="button" data-bs-toggle="dropdown" aria-expanded="false">car transmission types
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink2">
+                <li><a class="dropdown-item" href="#">add</a></li>
+                <li><a class="dropdown-item" href="#">update</a></li>
+                <li><a class="dropdown-item" href="#">list</a></li>
+                <li><a class="dropdown-item" href="#">delete</a></li>
+            </ul>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardarkdropdownmenulink3" role="button" data-bs-toggle="dropdown" aria-expanded="false">car types
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbardarkdropdownmenulink3">
+                <li><a class="dropdown-item" href="#">add</a></li>
+                <li><a class="dropdown-item" href="#">update</a></li>
+                <li><a class="dropdown-item" href="#">list</a></li>
+                <li><a class="dropdown-item" href="#">delete</a></li>
+            </ul>
+        </li>
+
+    </ul>
+
+</asp:Content>
+

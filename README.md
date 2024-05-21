@@ -539,5 +539,31 @@ BEGIN
     INSERT INTO Car (CarId, ManufacturerId, CarTypeId, TransmissiontypeID, ManufacturerName, Model, Type, Engine, BHP, Transmission, Mileage, Seats, AirBagDetails, BootSpace, Price)
     VALUES (@CarId, @ManufacturerId, @CarTypeId, @TransmissiontypeID, @ManufacturerName, @Model, @Type, @Engine, @BHP, @Transmission, @Mileage, @Seats, @AirBagDetails, @BootSpace, @Price);
 END
+--------------------Values for table ------------------------
+-- Insert sample data into the Car table
+INSERT INTO [dbo].[Car]
+           ([CarId]
+           ,[ManufacturerId]
+           ,[CarTypeId]
+           ,[TransmissionTypeId]
+           ,[ManufacturerName]
+           ,[Model]
+           ,[Type]
+           ,[Engine]
+           ,[BHP]
+           ,[Transmission]
+           ,[Mileage]
+           ,[Seat]
+           ,[AirBagDetails]
+           ,[BootSpace]
+           ,[Price])
+     VALUES
+           (1, 101, 201, 301, 'Toyota', 'Corolla', 'Sedan', 'V6', 180, 'Automatic', 30, 5, 'Driver, Passenger', 470, 20000.00),
+           (2, 102, 202, 302, 'Honda', 'Civic', 'Sedan', 'I4', 160, 'Manual', 32, 5, 'Driver, Passenger', 450, 22000.00),
+           (3, 103, 203, 303, 'Ford', 'Mustang', 'Coupe', 'V8', 450, 'Automatic', 20, 4, 'Driver, Passenger, Side', 380, 35000.00),
+           (4, 104, 204, 304, 'Chevrolet', 'Tahoe', 'SUV', 'V8', 355, 'Automatic', 15, 7, 'Driver, Passenger, Side', 1220, 50000.00),
+           (5, 105, 205, 305, 'Tesla', 'Model S', 'Sedan', 'Electric', 762, 'Automatic', 102, 5, 'Driver, Passenger, Side', 804, 80000.00),
+           (6, 106, 206, 306, 'BMW', 'X5', 'SUV', 'I6', 335, 'Automatic', 24, 5, 'Driver, Passenger, Side', 650, 60000.00),
+           (7, 107, 207, 307, 'Audi', 'A4', 'Sedan', 'I4', 252, 'Automatic', 27, 5, 'Driver, Passenger, Side', 480, 40000.00);
 
 

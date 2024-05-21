@@ -508,3 +508,36 @@ namespace Car_Info_Management
 </asp:Content>
 
 
+----------------Add Car Admin
+
+ALTER PROCEDURE [dbo].[AddCar]
+@CarId int,
+@ManufacturerId int,
+@CarTypeId int,
+@TransmissiontypeID int,
+@Model nvarchar(100),
+@Type nvarchar(50),
+@Engine nvarchar(4),
+@BHP int,
+@Transmission nvarchar(50),
+@Mileage int,
+@Seats int,
+@AirBagDetails nvarchar(255),
+@BootSpace int,
+@Price decimal(18,2)
+AS 
+BEGIN
+    -- Declare a variable to hold the ManufacturerName
+    DECLARE @ManufacturerName nvarchar(100);
+
+    -- Select the ManufacturerName from the Manufacturer table
+    SELECT @ManufacturerName = ManufacturerName
+    FROM Manufacturer
+    WHERE ManufacturerId = @ManufacturerId;
+
+    -- Insert the values into the Car table
+    INSERT INTO Car (CarId, ManufacturerId, CarTypeId, TransmissiontypeID, ManufacturerName, Model, Type, Engine, BHP, Transmission, Mileage, Seats, AirBagDetails, BootSpace, Price)
+    VALUES (@CarId, @ManufacturerId, @CarTypeId, @TransmissiontypeID, @ManufacturerName, @Model, @Type, @Engine, @BHP, @Transmission, @Mileage, @Seats, @AirBagDetails, @BootSpace, @Price);
+END
+
+
